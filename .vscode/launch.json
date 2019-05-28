@@ -41,6 +41,26 @@
                 ],
                 "debuggerPath": "/home/pi/vsdbg/vsdbg"
             }
+        },
+        {
+            "name": ".NET Core Remote Launch - Linux",
+            "type": "coreclr",
+            "request": "launch",
+            "program": "~/dotnet/dotnet",
+            "args": [
+                "./tcpserver.dll" , "wlan0"
+            ],
+            "cwd": "~/target/tcpserver",
+            "stopAtEntry": false,
+            "console": "internalConsole",
+            "pipeTransport": {
+                "pipeCwd": "${workspaceRoot}",
+                "pipeProgram": "/usr/bin/ssh",
+                "pipeArgs": [
+                    "-T", "pi@rpi3"
+                ],
+                "debuggerPath": "~/vsdbg/vsdbg"
+                }
         }
     ]
 }
